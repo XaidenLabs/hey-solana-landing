@@ -1,6 +1,5 @@
-import Hero from "@/pagecomponents/hero";
-import Security from "@/pagecomponents/security";
-import Image from "next/image";
+import Hero from "@/components/pagecomponents/hero";
+import Security from "@/components/pagecomponents/security";
 
 export default function Home() {
   return (

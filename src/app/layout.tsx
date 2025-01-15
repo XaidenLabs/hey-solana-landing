@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmsans.variable} antialiased`}
+        className={`${dmsans.variable} antialiased  bg-[url('/pngs/hero.png')] bg-cover`}
       >
         <Navigation />
         {children}
