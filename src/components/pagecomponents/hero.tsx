@@ -8,6 +8,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Draggable } from "gsap/Draggable";
 import Navigation from "../Navigation";
 import { ArrowOutward } from "@mui/icons-material";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(
   useGSAP,
@@ -18,6 +19,63 @@ gsap.registerPlugin(
 );
 
 export default function Hero() {
+  const words = ["AI", "Voice"];
+  const [index, setIndex] = useState(0);
+  const words2 = ["Hands Free", "Secure", "Fast"];
+  const [displayText, setDisplayText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const typingSpeed = isDeleting ? 100 : 500; // Typing and deleting speed
+  const delay = 1500; // Pause before deleting
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      gsap.to(".changing-text", {
+        opacity: 0,
+        y: -10,
+        duration: 0.5,
+        onComplete: () => {
+          setIndex((prevIndex) => (prevIndex + 1) % words.length);
+          gsap.fromTo(
+            ".changing-text",
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.5 }
+          );
+        },
+      });
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    let typingTimeout: any;
+
+    const handleTyping = () => {
+      const currentWord = words2[wordIndex];
+
+      if (!isDeleting) {
+        // Typing effect
+        setDisplayText(currentWord.substring(0, displayText.length + 1));
+        if (displayText === currentWord) {
+          typingTimeout = setTimeout(() => setIsDeleting(true), delay);
+        }
+      } else {
+        // Deleting effect
+        setDisplayText(currentWord.substring(0, displayText.length - 1));
+        if (displayText === "") {
+          setIsDeleting(false);
+          setWordIndex((prevIndex) => (prevIndex + 1) % words2.length);
+        }
+      }
+
+      typingTimeout = setTimeout(handleTyping, typingSpeed);
+    };
+
+    typingTimeout = setTimeout(handleTyping, typingSpeed);
+
+    return () => clearTimeout(typingTimeout);
+  }, [displayText, isDeleting, wordIndex]);
+
   useGSAP(() => {
     gsap.from(".firstImage", {
       scrollTrigger: {
@@ -45,15 +103,15 @@ export default function Hero() {
         <Navigation />
       </div>
 
-      <div className=" text-center py-10 space-y-3">
-        <h1 className="text-[50px] md:text-[100px] font-[500] leading-tight">
-          Your AI, Your Wallet
+      <div className=" text-center py-10 space-y-3 w-10/12">
+        <h1 className="text-[40px] md:text-[100px] font-[500] leading-tight">
+          Your{" "}
+          <span className="min-w-[100px] changing-text">{words[index]}</span>
+          ,Your Wallet
         </h1>
-        <p className="text-[32px] md:text-[64px] w-10/12 m-auto md:w-full text-white/60">
+        <p className="text-[28px] md:text-[64px] w-10/12 m-auto md:w-full text-white/60">
           With Hey Solana It's{" "}
-          <span className="text-darkpink border border-green-700 border-5">
-            Hands Free
-          </span>
+          <span className="text-darkpink">{displayText}</span>
         </p>
         <p className="text-[12px] md:text-[24px] w-7/12 m-auto">
           Manage your assets, trade, and get real-time insights. Just say, — Hey
