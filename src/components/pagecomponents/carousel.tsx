@@ -8,24 +8,22 @@ const carouselItems = [
   },
   {
     item: "Manage and showcase your NFTs easily",
-    image: "/pngs/audiowave.png",
+    image: "/pngs/carousel/profile.png",
     color: "#F2BAFF",
   },
   {
     item: "Swap tokens at the command of your voice",
-    image: "/pngs/audiowave.png",
+    image: "/pngs/carousel/swap.png",
     color: "#FCFFC3",
   },
   {
     item: "Get market insights, just start with “Hey Solana”",
-    image: "/pngs/audiowave.png",
-
+    image: "/pngs/carousel1.png",
     color: "#B6B9FF",
   },
   {
     item: "Get market insights, just start with “Hey Solana”",
-    image: "/pngs/audiowave.png",
-
+    image: "/pngs/carousel/swap.png",
     color: "#D8D8D8",
   },
 ];
@@ -46,17 +44,18 @@ export default function CarouselSegment() {
               return (
                 <div
                   key={index}
-                  className={`h-[300px] md:h-[400px] relative w-11/12 m-auto md:max-width-[300px] rounded-2xl px-5 text-black `}
+                  className={`h-[400px] overflow-hidden relative w-11/12 m-auto md:max-width-[300px] rounded-2xl px-5 text-black `}
                   style={{ backgroundColor: item.color }}
                 >
                   <div className="py-10 text-[24px]">{item.item}</div>
 
                   <div
                     className={`${
-                      index == 0 ? "bottom-0 " : "bottom-10 left-0"
-                    } absolute`}
+                      index == 1 && "scale-[1.5]"
+                    } bottom-0 left-0 flex flex-row justify-center w-full m-auto
+                     absolute`}
                   >
-                    <img src={item.image} alt={item.image} />
+                    <img className={``} src={item.image} alt={item.image} />
                   </div>
                 </div>
               );
