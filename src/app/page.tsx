@@ -1,14 +1,17 @@
+import CarouselSegment from "@/components/pagecomponents/carousel";
+import DetailsSegment from "@/components/pagecomponents/details";
 import Hero from "@/components/pagecomponents/hero";
+import RoadMap from "@/components/pagecomponents/roadmap";
 import Security from "@/components/pagecomponents/security";
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Hero />
+      <CarouselSegment />
+      <DetailsSegment />
       <Security />
-
-
-
+      <RoadMap />
     </div>
   );
 }
