@@ -32,7 +32,7 @@ const carouselItems = [
 export default function DetailsSegment() {
   return (
     <div className="w-screen">
-      <div className="bg-lightpink relative overflow-hidden rounded-t-[64px] border">
+      <div className="bg-lightpink relative overflow-hidden rounded-t-[64px]">
         <div className="flex flex-col md:flex-row relative overflow-hidden">
           <div className="text-black p-10 md:p-20 w-screen bg-black/10 md:bg-transparent z-50 md:z-0  m-auto  md:m-0 md:w-[607px]">
             <h2 className="text-[32px] md:text-[64px] font-bold">Hey Solana</h2>

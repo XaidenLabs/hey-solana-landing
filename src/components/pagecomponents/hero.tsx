@@ -49,7 +49,7 @@ export default function Hero() {
         <h1 className="text-[50px] md:text-[100px] font-[500] leading-tight">
           Your AI, Your Wallet
         </h1>
-        <p className="text-[32px] md:text-[64px] text-white/60">
+        <p className="text-[32px] md:text-[64px] w-10/12 m-auto md:w-full text-white/60">
           With Hey Solana It's{" "}
           <span className="text-darkpink border border-green-700 border-5">
             Hands Free
