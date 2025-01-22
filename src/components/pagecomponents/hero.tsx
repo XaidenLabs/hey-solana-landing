@@ -142,11 +142,10 @@ export default function Hero() {
             src="/pngs/voicepulser.png"
             alt="phones"
           />
-          <div className="h-[500px] bg-black z-50 w-screen absolute left-0 border"></div>
         </div>
-        <div className="firstImage hover:scale-[1.3] transition-all  max-w-[100px] md:w-[366px] ease-in-out absolute top-10 backdrop-blur-sm left-[-100px]">
+        <div className="firstImage hover:scale-[1.3] transition-all w-fit ease-in-out absolute top-10 backdrop-blur-sm left-[-100px]">
           <img
-            className="max-w-[100px] md:max-w-[366px] max-h-[200px] md:h-[463px]"
+            className="w-[366px] h-[463px]"
             src="/pngs/sendsol.png"
             alt="textImg"
           />

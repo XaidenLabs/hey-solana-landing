@@ -11,10 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        purple:"",
-        footergrey:"",
-        darkpink:"#971BB2",
-        lightpink:"#ED9AFF"
+        purple: "",
+        footergrey: "#6D6D6D",
+        darkpink: "#971BB2",
+        lightpink: "#ED9AFF",
       },
     },
   },

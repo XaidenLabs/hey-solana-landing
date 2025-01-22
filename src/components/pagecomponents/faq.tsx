@@ -38,7 +38,7 @@ const Faqs = () => {
   const [selectedFaq, setSelectedFaq] = useState(0);
   const faqs = landingfaqs;
   return (
-    <div className="flex flex-col w-11/12 md:w-10/12 m-auto md:flex-row  justify-center items-start md:space-x-24">
+    <div className="flex flex-col w-11/12 md:w-10/12 m-auto md:flex-row  justify-center items-start md:space-x-24 py-5 md:py-10">
       <div className="">
         <div className="flex flex-col md:space-y-4">
           <div className="font-daysans text-[32px]">FAQs</div>
@@ -53,7 +53,7 @@ const Faqs = () => {
               Discord community to request for further assistance.
             </div>
 
-            <button className="border buttonTracker border-[#89BD11] rounded-xl px-6 py-3 w-fit">
+            <button className="border buttonTracker border-darkpink rounded-xl px-6 py-3 w-fit">
               <a
                 href="https://discord.com/invite/tvZGAP4Qt8"
                 target="_blank"
@@ -110,7 +110,7 @@ const Faqs = () => {
           community to request for further assistance.
         </div>
 
-        <button className="border buttonTracker border-[#89BD11] rounded-xl px-6 py-3 w-fit">
+        <button className="border buttonTracker border-darkpink rounded-xl px-6 py-3 w-fit">
           <a
             href="https://discord.com/invite/tvZGAP4Qt8"
             target="_blank"
