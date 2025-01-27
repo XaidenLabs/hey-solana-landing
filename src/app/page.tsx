@@ -15,9 +15,9 @@ export default function Home() {
       <DetailsSegment />
       <Security />
       <RoadMap />
-      <MainFeature />
+      {/* <MainFeature /> */}
       <Faqs />
-      <BeforeFooter />
+      {/* <BeforeFooter /> */}
     </div>
   );
 }
