@@ -18,6 +18,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     setEmail('');
     setWallet('');
     onClose();
+    
+    localStorage.setItem('wallet', wallet);
+    alert('Data saved successfully!');
   };
 
   if (!isOpen) return null;
