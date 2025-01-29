@@ -38,7 +38,7 @@ export default function Security() {
               return (
                 <div
                   key={index}
-                  className="min-w-[205px] hover:bg-white/10 backdrop-blur-sm p-2 flex flex-row md:flex-col justify-between items-center md:items-start space-x-4 md:space-y-5 rounded-2xl"
+                  className="min-w-[205px]  hover:bg-white/10 backdrop-blur-sm p-2 flex flex-row md:flex-col justify-between items-center md:items-stretch  md:space-y-5 rounded-2xl"
                 >
                   <div
                     className="max-w-[100px] md:w-[100px] h-[100px] rounded-2xl"
@@ -46,7 +46,7 @@ export default function Security() {
                   >
                     <img src={item.image} alt={item.image} />
                   </div>
-                  <div>
+                  <div className="w-full">
                     <p className="text-[20px] font-[500] h-[50px] mb-2">
                       {item.title}
                     </p>
