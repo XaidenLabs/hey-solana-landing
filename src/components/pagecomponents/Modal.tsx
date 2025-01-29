@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     onClose();
     
     localStorage.setItem('wallet', wallet);
-    alert('Data saved successfully!');
+    // alert('Data saved successfully!');
   };
 
   if (!isOpen) return null;
@@ -60,7 +60,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             />
           </div>
           <div className="mb-4">
-            <a href="https://t.me/telegramlink" target="_blank" rel="noopener noreferrer" className="text-blue-300 flex items-center">
+            <a href="https://t.me/+mT-FJs0poLc5OTBl" target="_blank" rel="noopener noreferrer" className="text-blue-300 flex items-center">
               <FaTelegramPlane className="mr-2" /> Join our Telegram
             </a>
           </div>
