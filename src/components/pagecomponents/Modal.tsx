@@ -122,11 +122,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     <div>
       {isOpen && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-[100]"
+          className="fixed inset-0 flex items-center justify-center bg-white/10 backdrop-blur-sm z-[100]"
           onClick={handleClose}
         >
           <div
-            className="border p-6 rounded shadow-lg w-3/5 relative"
+            className="border p-6 bg-black rounded-2xl shadow-lg md:w-3/5 relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -137,14 +137,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             </button>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <div className="flex items-center justify-center">
+                <div className="md:flex items-center justify-center">
                   <h1 className="text-white text-[40px] mb-2">
                     Join the Waitlist
                   </h1>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="w-1/2">
+                <div className="md:flex gap-4">
+                  <div className="md:w-1/2">
                     <label
                       className="block text-sm font-bold mb-2"
                       htmlFor="firstName"
@@ -161,7 +161,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                     />
                   </div>
 
-                  <div className="w-1/2">
+                  <div className="md:w-1/2">
                     <label
                       className="block text-sm font-bold mb-2"
                       htmlFor="lastName"
@@ -180,8 +180,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <div className="flex gap-4 mb-4">
-                <div className="w-1/2">
+              <div className="md:flex gap-4 mb-4">
+                <div className="md:w-1/2">
                   <label
                     className="block text-white text-sm font-bold mb-2"
                     htmlFor="email"
@@ -198,7 +198,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   />
                 </div>
 
-                <div className="w-1/2">
+                <div className="md:w-1/2">
                   <label
                     className="block text-white text-sm font-bold mb-2"
                     htmlFor="country"
@@ -247,6 +247,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
               <div className="flex justify-center mt-4">
                 <button
+                  disabled={!isTelegramJoined}
+                  type="submit"
+                  className="bg-gradient-to-b  w-5/12 flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink"
+
+                >
+                  Submit
+                </button>
+                {/* <button
                   type="submit"
                   disabled={!isTelegramJoined}
                   className={`w-96 py-3 px-4 rounded-full text-xl flex justify-center items-center ${
@@ -256,14 +264,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   }`}
                 >
                   Submit
-                </button>
+                </button> */}
               </div>
             </form>
           </div>
         </div>
       )}
       {showAlert && (
-        <div className={`fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 py-2 px-4 rounded shadow-lg text-white ${alertColor}`}>
+        <div className={`fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 py-2 px-4 z-[100] rounded shadow-lg text-white ${alertColor}`}>
           {alertMessage}
         </div>
       )}
