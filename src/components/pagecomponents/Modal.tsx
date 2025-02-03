@@ -46,6 +46,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setAlertMessage('Form submitted successfully!');
         setAlertColor('bg-green-500');
         setShowAlert(true);
+        // Clear the form fields
         setFirstName('');
         setLastName('');
         setEmail('');
@@ -53,6 +54,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setCountry(null);
         setIsTelegramJoined(false);
         localStorage.setItem('wallet', wallet);
+        // Hide the alert after 5 seconds
         setTimeout(() => {
           setShowAlert(false);
         }, 5000);
@@ -61,6 +63,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setAlertMessage("Failed to submit form. Please try again.");
         setAlertColor('bg-red-500');
         setShowAlert(true);
+        // Hide the alert after 5 seconds
         setTimeout(() => {
           setShowAlert(false);
         }, 5000);
@@ -70,6 +73,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       setAlertMessage("An error occurred. Please try again.");
       setAlertColor('bg-red-500');
       setShowAlert(true);
+      // Hide the alert after 5 seconds
       setTimeout(() => {
         setShowAlert(false);
       }, 5000);
@@ -198,11 +202,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
               </div>
 
               <a
-                href="https://t.me/your-telegram-group"
+                href={process.env.NEXT_PUBLIC_TELEGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleTelegramClick}
-                className="text-blue-500 text-xl font-bold hover:underline flex items-center gap-2"
+                className="text-black text-sm font-bold hover:underline flex items-center gap-2"
               >
                 <FaTelegramPlane className="inline-block" />
                 Join our Telegram group
