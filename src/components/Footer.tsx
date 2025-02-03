@@ -7,11 +7,7 @@ export default function Footer() {
         {/* Logo and Call-to-Action Section */}
         <div className="space-y-6 text-center md:text-left w-full md:w-1/2">
           <div className="flex items-center justify-center md:justify-start gap-x-3">
-            <img
-              src="/pngs/logo.png"
-              className="w-10 h-10"
-              alt="Logo"
-            />
+            <img src="/pngs/logo.png" className="w-10 h-10" alt="Logo" />
             <h1 className="text-[32px] md:text-[40px] font-bold text-white">
               HeySolana
             </h1>
@@ -44,10 +40,18 @@ export default function Footer() {
           </ul>
           <ul className="space-y-4">
             <li className="hover:text-white transition">
-              <a href="#">Twitter</a>
+              <a 
+                href={process.env.NEXT_PUBLIC_TWITTER_URL}
+              >
+                Twitter
+              </a>
             </li>
             <li className="hover:text-white transition">
-              <a href="#">Telegram</a>
+              <a 
+                href={process.env.NEXT_PUBLIC_TELEGRAM_URL}
+              >
+                Telegram
+              </a>
             </li>
             <li className="hover:text-white transition">
               <a href="#">Discord</a>
