@@ -50,7 +50,7 @@ export default function RoadMap() {
         </div>
 
         {/* Roadmap Cards */}
-        <div className="flex gap-6">
+        <div className="flex justify-center items-center gap-4">
           {items.map((item: any, index: number) => {
             return (
               <div
