@@ -53,7 +53,12 @@ export default function Footer() {
               </a>
             </li>
             <li className="hover:text-white transition">
-              <a href="#">Discord</a>
+              <a 
+                target="blank"
+                href={process.env.NEXT_PUBLIC_DISCORD_URL}
+              >
+                Discord
+              </a>
             </li>
           </ul>
         </div>
