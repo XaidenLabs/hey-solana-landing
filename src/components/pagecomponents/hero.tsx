@@ -1,7 +1,6 @@
 "use client";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -9,6 +8,7 @@ import { Draggable } from "gsap/Draggable";
 import Navigation from "../Navigation";
 import { ArrowOutward } from "@mui/icons-material";
 import { useEffect, useState } from "react";
+import Modal from './Modal'; 
 
 gsap.registerPlugin(
   useGSAP,
@@ -27,6 +27,15 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const typingSpeed = isDeleting ? 100 : 500; // Typing and deleting speed
   const delay = 1500; // Pause before deleting
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -118,7 +127,10 @@ export default function Hero() {
         </p>
 
         <div className="py-5 flex flex-row justify-center">
-          <button className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink">
+          <button
+            className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink"
+            onClick={openModal} // Open the modal on button click
+          >
             Join the waitlist <ArrowOutward />
           </button>
         </div>
@@ -154,6 +166,7 @@ export default function Hero() {
           <img height={316} width={267} src="/pngs/heysol.png" alt="textImg" />
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal} /> {/* Add the Modal component */}
     </div>
   );
 }

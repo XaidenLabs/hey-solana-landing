@@ -17,7 +17,7 @@ export default function Home() {
       <RoadMap />
       {/* <MainFeature /> */}
       <Faqs />
-      <BeforeFooter />
+      {/* <BeforeFooter /> */}
     </div>
   );
 }

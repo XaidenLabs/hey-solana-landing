@@ -1,58 +1,68 @@
 import Image from "next/image";
 
 export default function Footer() {
-    return (
-      <div className="bg-[#161616]  py-10">
-        <div className="w-11/12  md:w-10/12 m-auto space-y-3 md:space-y-0 flex flex-col md:flex-row justify-center md:justify-between items-start">
-          <div className="space-y-5 flex flex-col justify-center w-full">
-            <div className="flex flex-row justify-center md:justify-start items-center gap-x-2">
-              <img
-                src="/pngs/logo.png"
-                className="min-w-[40px] h-[40px]"
-                alt="Logo"
-              />{" "}
-              <h1 className="text-[40px] ">HeySolana</h1>
-            </div>
-            <h2 className="text-[24px] md:text-[46px] text-center md:text-start text-footergrey">
-              Try Hey Solana Today
-            </h2>
-            <div className="text-footergrey space-x-2 md:space-x-5 flex flex-row justify-center md:justify-start items-center">
-              <button className="border border-footergrey p-2 px-5 md:px-10 rounded-full">
-                Term of Service
-              </button>
-              <button className="border border-footergrey p-2 px-5 md:px-10 rounded-full">
-                Privacy Policy
-              </button>
-            </div>
+  return (
+    <div className="bg-[#161616] py-12">
+      <div className="w-11/12 md:w-10/12 m-auto space-y-8 md:space-y-0 flex flex-col md:flex-row justify-between items-center md:items-start">
+        {/* Logo and Call-to-Action Section */}
+        <div className="space-y-6 text-center md:text-left w-full md:w-1/2">
+          <div className="flex items-center justify-center md:justify-start gap-x-3">
+            <img
+              src="/pngs/logo.png"
+              className="w-10 h-10"
+              alt="Logo"
+            />
+            <h1 className="text-[32px] md:text-[40px] font-bold text-white">
+              HeySolana
+            </h1>
           </div>
-
-          <div className="flex felx-row justify-center  w-full md:justify-end text-footergrey items-start gap-x-20">
-            <ul>
-              <li>Get App</li>
-              <li>Resources</li>
-              <li>Contact</li>
-            </ul>
-
-            <ul>
-              <li>
-                <a href="">Twitter</a>
-              </li>
-              <li>
-                <a href="">Telegram</a>
-              </li>
-              <li>
-                <a href="">Discord</a>
-              </li>
-            </ul>
+          <h2 className="text-[20px] md:text-[28px] text-footergrey font-medium">
+            Try Hey Solana Today
+          </h2>
+          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+            <button className="border border-footergrey py-2 px-6 rounded-full hover:bg-footergrey hover:text-white transition">
+              Terms of Service
+            </button>
+            <button className="border border-footergrey py-2 px-6 rounded-full hover:bg-footergrey hover:text-white transition">
+              Privacy Policy
+            </button>
           </div>
         </div>
 
-        <div className="w-10/12 m-auto pt-10 text-footergrey">
-          <hr className="border border-footergrey" />
-          <div className="pt-5">
-            <div>&copy; {new Date().getFullYear()}</div>
-          </div>
+        {/* Navigation Links Section */}
+        <div className="flex justify-between w-full md:w-auto gap-x-12 text-center md:text-left text-footergrey">
+          <ul className="space-y-4">
+            <li className="hover:text-white transition">
+              <a href="#">Get App</a>
+            </li>
+            <li className="hover:text-white transition">
+              <a href="#">Resources</a>
+            </li>
+            <li className="hover:text-white transition">
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+          <ul className="space-y-4">
+            <li className="hover:text-white transition">
+              <a href="#">Twitter</a>
+            </li>
+            <li className="hover:text-white transition">
+              <a href="#">Telegram</a>
+            </li>
+            <li className="hover:text-white transition">
+              <a href="#">Discord</a>
+            </li>
+          </ul>
         </div>
       </div>
-    );
+
+      {/* Footer Bottom Section */}
+      <div className="w-11/12 md:w-10/12 m-auto pt-10">
+        <hr className="border-footergrey" />
+        <div className="pt-5 text-center text-footergrey">
+          &copy; {new Date().getFullYear()} HeySolana
+        </div>
+      </div>
+    </div>
+  );
 }
