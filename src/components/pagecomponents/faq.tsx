@@ -18,19 +18,19 @@ import { useState } from "react";
 export const landingfaqs = [
   {
     title: "What's HeySolana?",
-    text: "The Pump Militia Airdrop is all about rewarding early supporters and players by giving them ways to mine $PUMP from their mobile phones before TGE.It's designed to reward early members, engage and incentivise users while driving adoption within the community.",
+    text: "HeySolana is an AI-driven voice assistant designed to enhance transactions on the Solana blockchain through hands-free interactions. It simplifies decentralized finance (DeFi) activities by allowing users to perform transactions, analyze portfolios, and receive real-time market insights using voice commands.",
   },
   {
-    title: "Who is eligible to mine $PUMP?",
-    text: "Everyone with an access to a mobile phone.",
+    title: "How does HeySolana work?",
+    text: "HeySolana utilizes Progressive Web App (PWA) technology combined with advanced natural language processing (NLP) to facilitate seamless interactions. Users can issue voice commands to perform various tasks such as swapping tokens, scheduling transactions, and receiving personalized financial recommendations.",
   },
   {
-    title: "When can I withdraw my mined $PUMP?",
-    text: "Mined $PUMP balances would be availabe for withdrawal at TGE. you can also statke your $PUMP tokens and earn rewards.",
+    title: "What technology powers HeySolana?",
+    text: "HeySolana is built on the Solana blockchain, which provides ultra-fast and low-cost transactions. It employs state-of-the-art NLP for voice recognition and end-to-end encryption to ensure user data and transaction security.",
   },
   {
-    title: "What Blockchain Network is used?",
-    text: "The Pump Militia ecosystem is built on the Solana Network.",
+    title: "How does HeySolana enhance user experience in DeFi?",
+    text: "By integrating AI-powered voice assistance, HeySolana simplifies complex DeFi operations, making it easier for users to engage with staking, lending, and yield farming through intuitive voice commands. This democratizes access to financial tools for users without technical backgrounds.",
   },
 ];
 const Faqs = () => {

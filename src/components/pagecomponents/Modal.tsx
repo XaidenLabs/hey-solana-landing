@@ -46,6 +46,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setAlertMessage('Form submitted successfully!');
         setAlertColor('bg-green-500');
         setShowAlert(true);
+        // Clear the form fields
         setFirstName('');
         setLastName('');
         setEmail('');
@@ -53,6 +54,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setCountry(null);
         setIsTelegramJoined(false);
         localStorage.setItem('wallet', wallet);
+        // Hide the alert after 5 seconds
         setTimeout(() => {
           setShowAlert(false);
         }, 5000);
@@ -61,6 +63,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setAlertMessage("Failed to submit form. Please try again.");
         setAlertColor('bg-red-500');
         setShowAlert(true);
+        // Hide the alert after 5 seconds
         setTimeout(() => {
           setShowAlert(false);
         }, 5000);
@@ -70,6 +73,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       setAlertMessage("An error occurred. Please try again.");
       setAlertColor('bg-red-500');
       setShowAlert(true);
+      // Hide the alert after 5 seconds
       setTimeout(() => {
         setShowAlert(false);
       }, 5000);
@@ -88,15 +92,41 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   const options = countryList().getData();
 
+  const customStyles = {
+    control: (provided: any) => ({
+      ...provided,
+      backgroundColor: 'black',
+      color: 'white',
+      borderColor: 'black',
+    }),
+    singleValue: (provided: any) => ({
+      ...provided,
+      color: 'white',
+    }),
+    menu: (provided: any) => ({
+      ...provided,
+      backgroundColor: 'black',
+      color: 'white',
+    }),
+    option: (provided: any, state: any) => ({
+      ...provided,
+      backgroundColor: state.isSelected ? 'gray' : 'black',
+      color: 'white',
+      '&:hover': {
+        backgroundColor: 'gray',
+      },
+    }),
+  };
+
   return (
     <div>
       {isOpen && (
         <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+          className="fixed inset-0 flex items-center justify-center bg-white/10 backdrop-blur-sm z-[100]"
           onClick={handleClose}
         >
           <div
-            className="bg-darkpink p-6 rounded shadow-lg w-96 relative"
+            className="border p-6 bg-black rounded-2xl shadow-lg md:w-3/5 relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -107,77 +137,84 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
             </button>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <div>
-                  <h1 className="text-white text-[30px] mb-2">
+                <div className="md:flex items-center justify-center">
+                  <h1 className="text-white text-[40px] mb-2">
                     Join the Waitlist
                   </h1>
                 </div>
 
-                <label
-                  className="block text-sm font-bold mb-2"
-                  htmlFor="firstName"
-                >
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  required
-                />
+                <div className="md:flex gap-4">
+                  <div className="md:w-1/2">
+                    <label
+                      className="block text-sm font-bold mb-2"
+                      htmlFor="firstName"
+                    >
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline"
+                      required
+                    />
+                  </div>
+
+                  <div className="md:w-1/2">
+                    <label
+                      className="block text-sm font-bold mb-2"
+                      htmlFor="lastName"
+                    >
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
 
-              <div className="mb-4">
-                <label
-                  className="block text-white text-sm font-bold mb-2"
-                  htmlFor="lastName"
-                >
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  required
-                />
-              </div>
+              <div className="md:flex gap-4 mb-4">
+                <div className="md:w-1/2">
+                  <label
+                    className="block text-white text-sm font-bold mb-2"
+                    htmlFor="email"
+                  >
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline"
+                    required
+                  />
+                </div>
 
-              <div className="mb-4">
-                <label
-                  className="block text-white text-sm font-bold mb-2"
-                  htmlFor="email"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  required
-                />
-              </div>
-
-              <div className="mb-4">
-                <label
-                  className="block text-white text-sm font-bold mb-2"
-                  htmlFor="country"
-                >
-                  Country
-                </label>
-                <Select
-                  id="country"
-                  options={options}
-                  value={country}
-                  onChange={(newValue) => setCountry(newValue as { label: string; value: string } | null)}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  required
-                />
+                <div className="md:w-1/2">
+                  <label
+                    className="block text-white text-sm font-bold mb-2"
+                    htmlFor="country"
+                  >
+                    Country
+                  </label>
+                  <Select
+                    id="country"
+                    options={options}
+                    value={country}
+                    onChange={(newValue) => setCountry(newValue as { label: string; value: string } | null)}
+                    styles={customStyles}
+                    className="shadow appearance-none border rounded w-full text-white bg-black leading-tight focus:outline-none focus:shadow-outline"
+                    required
+                  />
+                </div>
               </div>
 
               <div className="mb-4">
@@ -192,13 +229,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                   id="wallet"
                   value={wallet}
                   onChange={(e) => setWallet(e.target.value)}
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-white bg-black leading-tight focus:outline-none focus:shadow-outline"
                   required
                 />
               </div>
 
               <a
-                href="https://t.me/your-telegram-group"
+                href={process.env.NEXT_PUBLIC_TELEGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleTelegramClick}
@@ -208,23 +245,33 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
                 Join our Telegram group
               </a>
 
-              <button
-                type="submit"
-                disabled={!isTelegramJoined}
-                className={`mt-4 w-full py-3 px-4 rounded-full text-xl ${
-                  isTelegramJoined
-                    ? "bg-black text-white"
-                    : "bg-gray-400 text-white"
-                }`}
-              >
-                Submit
-              </button>
+              <div className="flex justify-center mt-4">
+                <button
+                  disabled={!isTelegramJoined}
+                  type="submit"
+                  className="bg-gradient-to-b  w-5/12 flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink"
+
+                >
+                  Submit
+                </button>
+                {/* <button
+                  type="submit"
+                  disabled={!isTelegramJoined}
+                  className={`w-96 py-3 px-4 rounded-full text-xl flex justify-center items-center ${
+                    isTelegramJoined
+                      ? "bg-darkpink text-white"
+                      : "bg-gray-400 text-white"
+                  }`}
+                >
+                  Submit
+                </button> */}
+              </div>
             </form>
           </div>
         </div>
       )}
       {showAlert && (
-        <div className={`fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 py-2 px-4 rounded shadow-lg text-white ${alertColor}`}>
+        <div className={`fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 py-2 px-4 z-[100] rounded shadow-lg text-white ${alertColor}`}>
           {alertMessage}
         </div>
       )}
