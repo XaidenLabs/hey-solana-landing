@@ -45,7 +45,7 @@ export default function Security() {
                 className="min-w-[250px] hover:bg-white/10 backdrop-blur-sm p-4 flex flex-row md:flex-col items-start gap-x-4 md:gap-y-5 rounded-2xl"
               >
                 <div
-                  className="w-[100px] h-[100px] flex items-center justify-center rounded-2xl"
+                  className="min-w-[100px] min-h-[100px] flex items-center justify-center rounded-2xl"
                   style={{ backgroundColor: item.bgcolor }}
                 >
                   <img

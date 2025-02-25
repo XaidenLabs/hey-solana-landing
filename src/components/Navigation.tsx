@@ -4,11 +4,13 @@ export default function Navigation() {
   return (
     <div className="backdrop-blur-md bg-[#28282866]/20 my-5 flex flex-row justify-between items-center w-11/12 md:w-10/12 m-auto p-4 px-6 rounded-full border border-darkpink/20">
       <div className="flex items-center gap-x-3">
-        <img
-          src="/pngs/logo.png"
-          className="w-[50px] h-[50px]"
-          alt="Logo"
-        />
+        <a href="/">
+          <img
+            src="/pngs/logo.png"
+            className="w-[50px] h-[50px]"
+            alt="Logo"
+          />
+        </a>
         <h1 className="hidden md:block text-lg font-medium text-white">
           HeySolana
         </h1>

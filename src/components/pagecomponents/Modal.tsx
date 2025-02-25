@@ -3,6 +3,7 @@ import Select from "react-select";
 import { FaTelegramPlane, FaTimes } from "react-icons/fa";
 import countryList from "react-select-country-list";
 import Link from "next/link";
+import { CircularProgress } from "@mui/material";
 
 interface ModalProps {
   isOpen: boolean;
@@ -19,9 +20,23 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const [alertColor, setAlertColor] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isTelegramJoined) {
+      setAlertMessage('Kindly Join Our Telegram Channel!');
+      setAlertColor('bg-red-500');
+      setShowAlert(true);
+
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 2000);
+      return;
+    }
+
+
     const data = {
       email_address: email,
       first_name: firstName,
@@ -31,6 +46,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     };
 
     try {
+      setLoading(true);
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/add_to_waitlist`, {
         method: 'POST',
         headers: {
@@ -55,8 +71,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setIsTelegramJoined(false);
         localStorage.setItem('wallet', wallet);
         // Hide the alert after 5 seconds
+        setShowAlert(false);
         setTimeout(() => {
-          setShowAlert(false);
+          setLoading(false);
         }, 5000);
       } else {
         console.error("Failed to submit form. Please check the API endpoint.");
@@ -64,6 +81,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         setAlertColor('bg-red-500');
         setShowAlert(true);
         // Hide the alert after 5 seconds
+        setLoading(false);
         setTimeout(() => {
           setShowAlert(false);
         }, 5000);
@@ -72,7 +90,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       console.error("Error:", error);
       setAlertMessage("An error occurred. Please try again.");
       setAlertColor('bg-red-500');
+      setLoading(false)
       setShowAlert(true);
+
       // Hide the alert after 5 seconds
       setTimeout(() => {
         setShowAlert(false);
@@ -247,12 +267,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
               <div className="flex justify-center mt-4">
                 <button
-                  disabled={!isTelegramJoined}
                   type="submit"
                   className="bg-gradient-to-b  w-5/12 flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink"
 
                 >
-                  Submit
+                  {loading ? <CircularProgress /> :
+                    "Submit"}
                 </button>
                 {/* <button
                   type="submit"

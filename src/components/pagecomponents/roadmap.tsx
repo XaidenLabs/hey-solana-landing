@@ -42,20 +42,20 @@ Strengthen partnerships within the Solana ecosystem to enhance platform utility.
 export default function RoadMap() {
   return (
     <div className="bg-black/80">
-      <div className="w-10/12 m-auto py-10">
+      <div className="w-10/12  m-auto py-10">
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-10 m-auto">
           <h2 className="text-[40px] text-white font-bold">Road map</h2>
           <p className="text-[#666666]">Implementation plans</p>
         </div>
 
         {/* Roadmap Cards */}
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex flex-col md:flex-row w-11/12 md:w-10/12 m-auto justify-center items-center gap-4 px-1">
           {items.map((item: any, index: number) => {
             return (
               <div
                 key={index}
-                className={`w-full sm:w-[288px] md:w-[320px] h-[400px] border ${item.status == "completed"
+                className={`min-w-[288px] md:w-[320px] h-[410px] snap-center border ${item.status == "completed"
                     ? "border-darkpink bg-darkpink/10"
                     : "border-green-600 bg-green-600/10"
                   } rounded-2xl p-6 flex flex-col items-start space-y-4 shadow-lg`}
@@ -65,7 +65,7 @@ export default function RoadMap() {
                   className={`rounded-full border ${item.status == "completed"
                       ? "border-darkpink"
                       : "border-green-600"
-                    } h-[40px] w-[40px] flex justify-center items-center`}
+                    } min-h-[40px] min-w-[40px] flex justify-center items-center`}
                 >
                   <div
                     className={`rounded-full ${item.status == "completed"
@@ -74,11 +74,9 @@ export default function RoadMap() {
                       } h-[15px] w-[15px]`}
                   ></div>
                 </div>
-
                 {/* Content */}
                 <div className="text-start ">
                   <div className=" h-[100] mt-10">
-
                   <p className="text-[24px] font-bold text-white mb-2">
                     {item.title}
                   </p>
@@ -86,7 +84,6 @@ export default function RoadMap() {
                     {item.tag}
                   </p>
                   </div>
-
                   <p className="text-[#666666] text-[16px] leading-tight">
                     {item.sub_title}
                   </p>

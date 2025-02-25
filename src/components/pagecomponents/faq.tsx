@@ -55,7 +55,7 @@ const Faqs = () => {
 
             <button className="border buttonTracker border-darkpink rounded-xl px-6 py-3 w-fit">
               <a
-                href="https://discord.com/invite/tvZGAP4Qt8"
+                href="#"
                 target="_blank"
                 className="font-sans buttonTracker text-vivd-lime-green-10 text-sm"
               >
@@ -112,7 +112,7 @@ const Faqs = () => {
 
         <button className="border buttonTracker border-darkpink rounded-xl px-6 py-3 w-fit">
           <a
-            href="https://discord.com/invite/tvZGAP4Qt8"
+            href="#"
             target="_blank"
             className="font-sans buttonTracker text-vivd-lime-green-10 text-sm"
           >
