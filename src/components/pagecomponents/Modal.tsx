@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       const contentType = response.headers.get("content-type");
       if (response.ok && contentType && contentType.includes("application/json")) {
         const result = await response.json();
-        console.log('Form submitted successfully:', result);
+        console.log('Form submitted successfully:', result.message);
         setAlertMessage('Form submitted successfully!');
         setAlertColor('bg-green-500');
         setShowAlert(true);
@@ -76,8 +76,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           setLoading(false);
         }, 5000);
       } else {
-        console.error("Failed to submit form. Please check the API endpoint.");
-        setAlertMessage("Failed to submit form. Please try again.");
+        const result = await response.json();
+        setAlertMessage(result.message);
         setAlertColor('bg-red-500');
         setShowAlert(true);
         // Hide the alert after 5 seconds
