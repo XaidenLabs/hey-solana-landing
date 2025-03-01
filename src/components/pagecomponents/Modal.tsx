@@ -56,39 +56,39 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
       });
 
       const contentType = response.headers.get("content-type");
-      if (response.ok && contentType && contentType.includes("application/json")) {
+      // if (response.ok && contentType && contentType.includes("application/json")) {
+      //   const result = await response.json();
+      //   console.log('Form submitted successfully:', result.message);
+      //   setAlertMessage('Form submitted successfully!');
+      //   setAlertColor('bg-green-500');
+      //   setShowAlert(true);
+      //   // Clear the form fields
+      //   setFirstName('');
+      //   setLastName('');
+      //   setEmail('');
+      //   setWallet('');
+      //   setCountry(null);
+      //   setIsTelegramJoined(false);
+      //   localStorage.setItem('wallet', wallet);
+      //   // Hide the alert after 5 seconds
+      //   setShowAlert(false);
+      //   setTimeout(() => {
+      //     setLoading(false);
+      //   }, 5000);
+      // } else {
         const result = await response.json();
-        console.log('Form submitted successfully:', result.message);
-        setAlertMessage('Form submitted successfully!');
+      setAlertMessage(result.message);
         setAlertColor('bg-green-500');
-        setShowAlert(true);
-        // Clear the form fields
-        setFirstName('');
-        setLastName('');
-        setEmail('');
-        setWallet('');
-        setCountry(null);
-        setIsTelegramJoined(false);
-        localStorage.setItem('wallet', wallet);
-        // Hide the alert after 5 seconds
-        setShowAlert(false);
-        setTimeout(() => {
-          setLoading(false);
-        }, 5000);
-      } else {
-        const result = await response.json();
-        setAlertMessage(result.message);
-        setAlertColor('bg-red-500');
-        setShowAlert(true);
+      setShowAlert(true);
         // Hide the alert after 5 seconds
         setLoading(false);
         setTimeout(() => {
           setShowAlert(false);
         }, 5000);
-      }
+      // }
     } catch (error) {
       console.error("Error:", error);
-      setAlertMessage("An error occurred. Please try again.");
+      setAlertMessage("An error occurred. Please try again." + error);
       setAlertColor('bg-red-500');
       setLoading(false)
       setShowAlert(true);
@@ -291,10 +291,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         </div>
       )}
       {showAlert && (
-        <div className={`fixed top-0 left-1/2 transform -translate-x-1/2 mt-4 py-2 px-4 z-[100] rounded shadow-lg text-white ${alertColor}`}>
+        <div className={`fixed top-0 w-10/12 text-center font-bold py-5 left-1/2 transform -translate-x-1/2 mt-4 px-4 z-[100] rounded-xl shadow-lg text-white ${alertColor}`}>
           {alertMessage}
         </div>
-      )}
+      )} 
     </div>
   );
 };
