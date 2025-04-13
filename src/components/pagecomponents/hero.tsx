@@ -8,7 +8,7 @@ import { Draggable } from "gsap/Draggable";
 import Navigation from "../Navigation";
 import { ArrowOutward } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import Modal from './Modal'; 
+import Modal from './Modal';
 
 gsap.registerPlugin(
   useGSAP,
@@ -108,9 +108,7 @@ export default function Hero() {
   }, {});
   return (
     <div className=" bg-[url('/pngs/hero.png')] bg-cover flex flex-col justify-center items-center min-h-screen text-white">
-      <div className="w-screen">
-        <Navigation />
-      </div>
+
 
       <div className=" text-center py-10 space-y-3 w-10/12">
         <h1 className="text-[40px] md:text-[100px] font-[500] leading-tight">

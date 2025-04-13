@@ -15,12 +15,12 @@ export default function Footer() {
             Try Hey Solana Today
           </h2>
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
-            <button className="border border-footergrey py-2 px-6 rounded-full hover:bg-footergrey hover:text-white transition">
+            <a href="/terms-of-service" className="border border-footergrey py-2 px-6 rounded-full hover:bg-footergrey hover:text-white transition">
               Terms of Service
-            </button>
-            <button className="border border-footergrey py-2 px-6 rounded-full hover:bg-footergrey hover:text-white transition">
+            </a>
+            <a href="/privacy-policy" className="border border-footergrey py-2 px-6 rounded-full hover:bg-footergrey hover:text-white transition">
               Privacy Policy
-            </button>
+            </a>
           </div>
         </div>
 
@@ -39,23 +39,23 @@ export default function Footer() {
           </ul>
           <ul className="space-y-4">
             <li className="hover:text-white transition">
-              <a 
-                href={process.env.NEXT_PUBLIC_TWITTER_URL}
+              <a
+                href="https://x.com/useHeysolana"
               >
-                Twitter
+                X (formerly Twitter)
               </a>
             </li>
             <li className="hover:text-white transition">
-              <a 
-                href={process.env.NEXT_PUBLIC_TELEGRAM_URL}
+              <a
+                href="https://t.me/+mT-FJs0poLc5OTBl"
               >
                 Telegram
               </a>
             </li>
             <li className="hover:text-white transition">
-              <a 
+              <a
                 target="blank"
-                href={process.env.NEXT_PUBLIC_DISCORD_URL}
+                href="https://discord.com/invite/6xdS46sPFb"
               >
                 Discord
               </a>

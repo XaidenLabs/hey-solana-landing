@@ -25,6 +25,9 @@ export default function RootLayout({
       <body
         className={`${dmsans.variable} bg-[url('/pngs/connections.png')] bg-black bg-contain antialiased`}
       >
+        <div className="w-screen">
+          <Navigation />
+        </div>
         {children}
         <Footer />
       </body>
