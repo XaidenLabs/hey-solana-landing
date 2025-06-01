@@ -19,33 +19,35 @@ export default function Contact() {
         way.
       </p>
 
-      <div className="flex gap-4 mt-16">
-        <FloatingLabelInput
-          label="Name"
-          type="text"
-          name="name"
-          placeholder="Enter name"
-        />
-        <FloatingLabelInput
-          label="Email"
-          type="email"
-          name="email"
-          placeholder="Enter Email"
-        />
-      </div>
-      <div className="flex gap-4 mt-4">
-        <FloatingLabelTextarea
-          label="Message"
-          name="message"
-          placeholder="Enter your message"
-        />
-      </div>
+      <form action="">
+        <div className="flex gap-4 mt-16">
+          <FloatingLabelInput
+            label="Name"
+            type="text"
+            name="name"
+            placeholder="Enter name"
+          />
+          <FloatingLabelInput
+            label="Email"
+            type="email"
+            name="email"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div className="flex gap-4 mt-4">
+          <FloatingLabelTextarea
+            label="Message"
+            name="message"
+            placeholder="Enter your message"
+          />
+        </div>
 
-      <a href="#" className="py-5 flex flex-row justify-end" target="blank">
-        <button className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink">
-          Submit <ArrowOutward />
-        </button>
-      </a>
+        <a href="#" className="py-5 flex flex-row justify-end" target="blank">
+          <button className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink">
+            Submit <ArrowOutward />
+          </button>
+        </a>
+      </form>
     </div>
   );
 }
