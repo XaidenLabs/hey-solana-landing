@@ -5,10 +5,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Draggable } from "gsap/Draggable";
-import Navigation from "../Navigation";
+// import Navigation from "../Navigation";
 import { ArrowOutward } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import Modal from './Modal';
+import Modal from "./Modal";
 
 gsap.registerPlugin(
   useGSAP,
@@ -25,8 +25,8 @@ export default function Hero() {
   const [displayText, setDisplayText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const typingSpeed = isDeleting ? 100 : 500; // Typing and deleting speed
-  const delay = 1500; // Pause before deleting
+  const typingSpeed = isDeleting ? 100 : 500;
+  const delay = 1500;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -108,8 +108,6 @@ export default function Hero() {
   }, {});
   return (
     <div className=" bg-[url('/pngs/hero.png')] bg-cover flex flex-col justify-center items-center min-h-screen text-white">
-
-
       <div className=" text-center py-10 space-y-3 w-10/12">
         <h1 className="text-[40px] md:text-[100px] font-[500] leading-tight">
           Your <span className="min-w-[100px] changing-text">AI</span>
@@ -124,14 +122,15 @@ export default function Hero() {
           Solana.
         </p>
 
-        <div className="py-5 flex flex-row justify-center">
-          <button
-            className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink"
-            onClick={openModal} // Open the modal on button click
-          >
-            Join the waitlist <ArrowOutward />
+        <a
+          href="https://play.google.com/store/apps/details?id=com.maskyray.heysolana"
+          className="py-5 flex flex-row justify-center"
+          target="blank"
+        >
+          <button className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink">
+            Get Our App <ArrowOutward />
           </button>
-        </div>
+        </a>
       </div>
       <div className="w-screen md:w-[960px]  m-auto relative phoneScreen">
         <div className="flex flex-row justify-center items-center">
@@ -164,7 +163,8 @@ export default function Hero() {
           <img height={316} width={267} src="/pngs/heysol.png" alt="textImg" />
         </div>
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} /> {/* Add the Modal component */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />{" "}
+      {/* Add the Modal component */}
     </div>
   );
 }
