@@ -17,7 +17,7 @@ export default function Navigation() {
       </div>
 
       <div className="flex items-center">
-        <ul className="flex gap-x-6 backdrop-blur-lg bg-gradient-to-r from-white/10 to-black/10 border border-white/20 rounded-full py-2 px-6">
+        <ul className="flex gap-x-6 backdrop-blur-lg bg-gradient-to-r from-white/10 to-black/10 border border-white/20 rounded-full py-2 px-6 text-white">
           <li className="cursor-pointer text-sm md:text-base">
             Learn
           </li>
