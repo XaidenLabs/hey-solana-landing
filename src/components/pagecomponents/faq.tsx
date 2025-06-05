@@ -38,7 +38,7 @@ const Faqs = () => {
   const [selectedFaq, setSelectedFaq] = useState(0);
   const faqs = landingfaqs;
   return (
-    <div className="flex flex-col w-11/12 md:w-10/12 m-auto md:flex-row text-white justify-center items-start md:space-x-24 py-5 md:py-10">
+    <div id="faq" className="flex flex-col w-11/12 md:w-10/12 m-auto md:flex-row text-white justify-center items-start md:space-x-24 py-5 md:py-10">
       <div className="">
         <div className="flex flex-col md:space-y-4">
           <div className="font-daysans text-[32px]">FAQs</div>

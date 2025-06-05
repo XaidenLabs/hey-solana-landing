@@ -41,7 +41,7 @@ Strengthen partnerships within the Solana ecosystem to enhance platform utility.
 
 export default function RoadMap() {
   return (
-    <div className="bg-black/80">
+    <div id="roadmap" className="bg-black/80">
       <div className="w-10/12  m-auto py-10">
         {/* Header */}
         <div className="mb-10 m-auto">

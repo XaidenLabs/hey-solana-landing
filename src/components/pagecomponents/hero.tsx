@@ -108,7 +108,7 @@ export default function Hero() {
   }, {});
   return (
     <div className=" bg-[url('/pngs/hero.png')] bg-cover flex flex-col justify-center items-center min-h-screen text-white">
-      <div className=" text-center py-10 space-y-3 w-10/12">
+      <div className=" text-center py-32 space-y-3 w-10/12">
         <h1 className="text-[40px] md:text-[100px] font-[500] leading-tight">
           Your <span className="min-w-[100px] changing-text">AI</span>
           ,Your Wallet

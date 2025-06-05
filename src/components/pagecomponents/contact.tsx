@@ -5,7 +5,7 @@ import { ArrowOutward } from "@mui/icons-material";
 
 export default function Contact() {
   return (
-    <div className="bg-[url('/pngs/contactbg.png')] w-full max-w-[856px] h-auto bg-cover flex flex-col text-white p-6 sm:p-8 md:p-10 border-none rounded-[28px] gap-4">
+    <div id="contact" className="bg-[url('/pngs/contactbg.png')] w-full max-w-[856px] h-auto bg-cover flex flex-col text-white p-6 sm:p-8 md:p-10 border-none rounded-[28px] gap-4">
       <h1 className="text-2xl sm:text-3xl font-extrabold">Build with HeySolana</h1>
       <p className="text-base sm:text-lg">
         Integrate your Web3 solution and go voice-first.
