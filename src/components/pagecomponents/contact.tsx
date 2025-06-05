@@ -3,16 +3,14 @@ import FloatingLabelInput from "@/components/component/FloatingLabelInput";
 import FloatingLabelTextarea from "@/components/component/FloatingLabelTextarea";
 import { ArrowOutward } from "@mui/icons-material";
 
-import { Textarea } from "@heroui/input";
-
 export default function Contact() {
   return (
-    <div className="bg-[url('/pngs/contactbg.png')] w-[856px] h-[628px] bg-cover flex flex-col text-white p-10 border-none rounded-[28px] gap-2">
-      <h1 className="text-3xl font-extrabold">Build with HeySolana</h1>
-      <p className="text-lg">
+    <div className="bg-[url('/pngs/contactbg.png')] w-full max-w-[856px] h-auto bg-cover flex flex-col text-white p-6 sm:p-8 md:p-10 border-none rounded-[28px] gap-4">
+      <h1 className="text-2xl sm:text-3xl font-extrabold">Build with HeySolana</h1>
+      <p className="text-base sm:text-lg">
         Integrate your Web3 solution and go voice-first.
       </p>
-      <p className="text-gray-400">
+      <p className="text-sm sm:text-base text-gray-400">
         Join the growing ecosystem of developers bringing seamless, AI-powered
         voice access to their dApps. Book a call to explore how your product can
         live inside HeySolana’s assistant and reach users in an entirely new
@@ -20,7 +18,8 @@ export default function Contact() {
       </p>
 
       <form action="">
-        <div className="flex gap-4 mt-16">
+        {/* Stack inputs on small screens, side-by-side on medium and up */}
+        <div className="flex flex-col md:flex-row gap-4 mt-10">
           <FloatingLabelInput
             label="Name"
             type="text"
@@ -34,6 +33,7 @@ export default function Contact() {
             placeholder="Enter Email"
           />
         </div>
+
         <div className="flex gap-4 mt-4">
           <FloatingLabelTextarea
             label="Message"
@@ -42,11 +42,11 @@ export default function Contact() {
           />
         </div>
 
-        <a href="#" className="py-5 flex flex-row justify-end" target="blank">
-          <button className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink">
+        <div className="flex justify-end mt-6">
+          <button className="bg-gradient-to-b w-full sm:w-[200px] flex items-center justify-center from-lightpink to-darkpink border-2 border-lightpink/20 border-t-darkpink rounded-full p-2">
             Submit <ArrowOutward />
           </button>
-        </a>
+        </div>
       </form>
     </div>
   );
