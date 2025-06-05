@@ -1,0 +1,3 @@
+User-agent: * Allow: /
+
+Sitemap: https://heysolana.yraylabs.fun/sitemap

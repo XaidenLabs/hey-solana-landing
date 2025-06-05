@@ -6,6 +6,7 @@ import Hero from "@/components/pagecomponents/hero";
 import MainFeature from "@/components/pagecomponents/mainfeatures";
 import RoadMap from "@/components/pagecomponents/roadmap";
 import Security from "@/components/pagecomponents/security";
+import ContactCard from "@/components/pagecomponents/contactcard";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <DetailsSegment />
       <Security />
       <RoadMap />
+      <ContactCard />
       {/* <MainFeature /> */}
       <Faqs />
       {/* <BeforeFooter /> */}

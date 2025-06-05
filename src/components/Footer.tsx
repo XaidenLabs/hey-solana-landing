@@ -14,7 +14,7 @@ export default function Footer() {
           <h2 className="text-[20px] md:text-[28px] text-footergrey font-medium">
             Try Hey Solana Today
           </h2>
-          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 text-white">
             <a href="/terms-of-service" className="border border-footergrey py-2 px-6 rounded-full hover:bg-footergrey hover:text-white transition">
               Terms of Service
             </a>
