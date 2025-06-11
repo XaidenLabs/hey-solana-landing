@@ -66,7 +66,7 @@ export default function DetailsSegment() {
         <div className="flex flex-col md:flex-row justify-center gap-x-5 gap-y-5 md:gap-y-0 items-center overflow-hidden">
           <div className="bg-[url('/pngs/checkbalance.png')] text-[20px] md:text-[40px] bg-cover rounded-[50px] overflow-hidden h-[250px] w-11/12  md:h-[529px] md:w-[529px]">
             <div className="bg-[url('/pngs/sendcrypto.png')] bg-cover flex flex-row justify-center items-start p-10 rounded-[50px] h-[150px]  md:h-[300px] md:w-[360px] border-8 border-darkpink  ">
-              <p className="">Send Crypto Instantly</p>
+              <p className="text-white">Send Crypto Instantly</p>
             </div>
             <div className="text-black font-semibold p-5 md:p-10 w-full text-center md:text-start md:w-10/12">
               Check your balance and transaction history
@@ -78,7 +78,7 @@ export default function DetailsSegment() {
               Buy and sell digital assets
             </div>
             <div className="bg-[url('/pngs/blockchainsights.png')] absolute bottom-0 right-0 bg-cover flex flex-row justify-center items-start p-10 rounded-[50px] h-[150px]   md:h-[300px] md:w-[360px] border-8 border-darkpink  ">
-              <p className="">Get blockchain and market insights</p>
+              <p className="text-white">Get blockchain and market insights</p>
             </div>
           </div>
         </div>
