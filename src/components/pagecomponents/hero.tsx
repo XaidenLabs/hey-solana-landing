@@ -8,7 +8,8 @@ import { Draggable } from "gsap/Draggable";
 // import Navigation from "../Navigation";
 import { ArrowOutward } from "@mui/icons-material";
 import { useEffect, useState } from "react";
-import Modal from "./Modal";
+import Partnership from "./partnership";
+// import Modal from "./Modal";
 
 gsap.registerPlugin(
   useGSAP,
@@ -107,64 +108,41 @@ export default function Hero() {
     });
   }, {});
   return (
-    <div className=" bg-[url('/pngs/hero.png')] bg-cover flex flex-col justify-center items-center min-h-screen text-white">
-      <div className=" text-center py-10 space-y-3 w-10/12">
-        <h1 className="text-[40px] md:text-[100px] font-[500] leading-tight">
-          Your <span className="min-w-[100px] changing-text">AI</span>
-          ,Your Wallet
-        </h1>
-        <p className="text-[28px] md:text-[64px] w-10/12 m-auto md:w-full text-white/60">
-          With Hey Solana It's{" "}
-          <span className="text-darkpink">{displayText}</span>
-        </p>
-        <p className="text-[12px] md:text-[24px] w-7/12 m-auto">
-          Manage your assets, trade, and get real-time insights. Just say, — Hey
-          Solana.
-        </p>
+    <>
+      <div className="flex flex-col w-full md:w-full m-auto md:flex-row text-white items-center justify-center md:justify-start md:space-x-10  md:py-10 ">
+        <div className="flex flex-col space-y-3 w-full md:mr-32 md:ml-32 items-center md:items-start ">
+          <p className="text-white text-3xl md:text-6xl md:mb-4 font-extrabold">
+            Your Voice, Your Wallet
+          </p>
+          <p className="text-white flex flex-col items-center md:items-start text-3xl md:text-6xl relative">
+            With HeySolana, It's <br />
+            <span
+              key={displayText}
+              className="text-darkpink inline-block w-[12ch] text-center md:text-start transition-opacity duration-500 ease-in-out opacity-100"
+              style={{ minHeight: "1em" }}
+            >
+              {displayText}
+            </span>
+          </p>
 
-        <a
-          href="https://play.google.com/store/apps/details?id=com.maskyray.heysolana"
-          className="py-5 flex flex-row justify-center"
-          target="blank"
-        >
-          <button className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full p-2 bg-darkpink">
-            Get Our App <ArrowOutward />
-          </button>
-        </a>
-      </div>
-      <div className="w-screen md:w-[960px]  m-auto relative phoneScreen">
-        <div className="flex flex-row justify-center items-center">
-          <img
-            className="w-[200px] md:w-[459px]"
-            src="/pngs/phone1.png"
-            alt="phones"
-          />
-          <img
-            className="w-[150px] md:w-[419px]"
-            src="/pngs/phone2.png"
-            alt="phones"
-          />
+          <a
+            href="https://play.google.com/store/apps/details?id=com.maskyray.heysolana"
+            className="py-5 md:mt-2 flex flex-row justify-center"
+            target="blank"
+          >
+            <button className="bg-gradient-to-b  w-[200px] flex flex-row items-center justify-center from-lightpink to-darkpink  border-2 border-lightpink/20 border-t-darkpink rounded-full bg-darkpink p-[10px] md:p-4 ">
+              Get Our App <ArrowOutward />
+            </button>
+          </a>
         </div>
-        <div className="relative">
-          <img
-            className="md:w-[1000px] absolute bottom-[-200px] md:bottom-[-400px] "
-            src="/pngs/voicepulser.png"
-            alt="phones"
-          />
-        </div>
-        <div className="firstImage hover:scale-[1.3] transition-all w-fit ease-in-out absolute top-10 backdrop-blur-sm left-[-100px]">
-          <img
-            className="w-[366px] h-[463px]"
-            src="/pngs/sendsol.png"
-            alt="textImg"
-          />
-        </div>
-        <div className="secondImage hover:scale-[1.3] transition-all ease-in-out absolute top-[30%] backdrop-blur-sm right-0 ">
-          <img height={316} width={267} src="/pngs/heysol.png" alt="textImg" />
+
+        <div className="hidden md:block">
+          <img src="/pngs/heroimage.png" alt="image" width={800} />
         </div>
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} />{" "}
-      {/* Add the Modal component */}
-    </div>
+
+
+      <Partnership />
+    </>
   );
 }

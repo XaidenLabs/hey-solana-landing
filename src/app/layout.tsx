@@ -40,9 +40,9 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${dmsans.variable} bg-[url('/pngs/connections.png')] bg-black bg-contain antialiased`}
+        className={`${dmsans.variable} bg-[url('/pngs/hero.png')] bg-black bg-contain antialiased`}
       >
-        <div className="w-screen">
+        <div className="z-50">
           <Navigation />
         </div>
         {children}
